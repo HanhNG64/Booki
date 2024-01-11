@@ -158,6 +158,9 @@ h1 {
     border-radius: 0px 15px 15px 0px;
     border: 1px solid var(--Blue);
     background: var(--Blue);
+    color: var(--White);
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .information-filtre {
