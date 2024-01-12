@@ -7,12 +7,9 @@
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
-    --Grey: #F2F2F2;
     --White: #FFF;
-    --Blue: #0065FC;
     --Black: #000;
     --Grey-Tint2: #D9D9D9;
-    --Blue-light:#DEEBFF;
 }
 
 .fa-solid {
@@ -148,7 +145,7 @@ h1 {
     text-align: center;
     font-size: 18px;
     font-weight: 700;
-    border: 1px solid var(--Grey);
+    border: 1px solid var(--main-bg-color);
 }
 
 .information-recherche-bouton {
@@ -156,8 +153,8 @@ h1 {
     padding: 15px 16px;
     align-items: center;
     border-radius: 0px 15px 15px 0px;
-    border: 1px solid var(--Blue);
-    background: var(--Blue);
+    border: 1px solid var(--main-color);
+    background: var(--main-color);
     color: var(--White);
     font-size: 18px;
     font-weight: 700;
@@ -193,7 +190,7 @@ h1 {
 }
 
 .information-filtre-lien:hover {
-    background-color: var(-Blue-light);
+    background-color: var(--filter-bg-color);
 }
 
 .information-filtre-bouton {
@@ -209,7 +206,7 @@ h1 {
 }
 
 .information-filtre-bouton:hover {
-    background-color: var(--Blue-light);
+    background-color: var(--filter-bg-color);
 }
 
 .information_bar {
@@ -378,7 +375,7 @@ h1 {
 /****** Footer ***********/
 footer {
     display: flex;
-    background: var(--Grey);
+    background: var(--main-bg-color);
     justify-content: space-between;
 }
 
