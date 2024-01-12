@@ -75,7 +75,7 @@ header img {
     height: 19px;
 }
 
-nav {
+.header-navigation {
     /* La navigation (nav) doit se trouver moitié au dessus du logo */
     height: 50%;
     display: flex;
@@ -83,7 +83,7 @@ nav {
     gap: 68px; /*forcer un espacement de 68px entre les éléments*/
 }
 
-.lien-navigation {
+.header-navigation .navigation-link {
     /* Pour avoir la bordure bleu au niveau de nav :
      - mettre le lien (a) de même taille que le conteneur parent (nav)
      - utiliser le flexbox et forcer l'alignement du lien en bas
@@ -93,7 +93,7 @@ nav {
     align-items: end;
 }
 
-.lien-navigation:hover {
+.header-navigation .navigation-link:hover {
     color: var(--main-color);
     border-top: 1px solid var(--main-color);
 }
@@ -107,48 +107,42 @@ nav {
     margin-bottom: 35px;
 }
 
-.information-text {
+.information .information-headline {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 8px;
 }
 
-h1 {
-    font-size: 22px;
-    margin: 0px;  /*annuler les margin*/
-}
-
-.information-text p{
+.information .information-headline p {
     font-size: 16px;
     margin: 0px;  /*annuler les margin*/
 }
 
-.information-recherche {
+.information .information-search {
     display: flex;
     justify-content: start;
 }
 
-.information-recherche  .fa-location-dot {
+.information .information-search .fa-location-dot {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
-    height: 49px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     background: #F2F2F2;
     color: var(--Black);
 }
 
-.information-recherche input {
+.information .information-search input {
     text-align: center;
     font-size: 18px;
     font-weight: 700;
     border: 1px solid var(--main-bg-color);
 }
 
-.information-recherche-bouton {
+.information .information-search .information-search-action {
     display: flex;
     padding: 15px 16px;
     align-items: center;
@@ -160,40 +154,25 @@ h1 {
     font-weight: 700;
 }
 
-.information-filtre {
+.information .information-filter {
     display: flex;
     height: 50px;
     align-items: center;
     gap: 15px;
 }
 
-.information-filtre p {
+.information .information-filter .information-filter-title {
     font-size: 18px;
     font-weight: 700;
 }
 
-.information-filtre-groupe {
+.information .information-filter .information-filter-group {
     display: flex;
     height: 100%;
     gap: 15px;
 }
 
-.information-filtre-lien{
-    display: flex;
-    padding: 0px 19px;
-    align-items: center;
-    border-radius: 25px;
-    border: 2px solid var(--Grey-Tint2);
-    gap: 10px;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.information-filtre-lien:hover {
-    background-color: var(--filter-bg-color);
-}
-
-.information-filtre-bouton {
+.information .information-filter .information-filter-action {
     display: flex;
     padding: 0px 19px;
     align-items: center;
@@ -205,16 +184,16 @@ h1 {
     background-color: transparent;
 }
 
-.information-filtre-bouton:hover {
+.information .information-filter .information-filter-action:hover {
     background-color: var(--filter-bg-color);
 }
 
-.information_bar {
+.information .information-bar {
     display: flex;
     gap: 10px;
 }
 
-.information_bar span {
+.information .information-bar .information-bar-text {
     align-self: center;
 }
 
@@ -246,51 +225,49 @@ h1 {
     margin-bottom: 30px;
 }
 
-.herbergement-card-lien {
+.hebergements-cards .herbergement-card-link {
     flex-basis: 30%;
     flex-grow: 1;
     flex-shrink: 0;
 }
 
-.card-description-text{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.hebergements-cards .card-description .card-titre {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 16px;
-}
-
-.hebergements-cards .card-description .card-sousTitre {
-    margin: 0;
-    font-size: 14px;
-}
-
-.hebergements-cards .card{
+.hebergements-cards .herbergement-card-link .card {
     display: flex;
     flex-direction: column;
     height: 100%;
     gap : 8px;
-    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
 }
 
-.card-description {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.hebergements-cards img {
+.hebergements-cards .card img {
     width: 100%;
     height: 124px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.hebergements-afficher-plus {
+.hebergements-cards .card .card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hebergements-cards .card-content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hebergements-cards .card .card-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.hebergements-cards .card .card-subtitle {
+    margin: 0;
+    font-size: 14px;
+}
+
+.hebergements .hebergements-more {
     font-size: 18px;
     font-weight: 700;
 }
@@ -342,7 +319,7 @@ h1 {
 
 /****** Activities ***********/
 .activities{
-  padding: 30px;
+    padding: 30px;
 }
 
 .activities-cards {
@@ -352,21 +329,28 @@ h1 {
     gap : 30px;
 }
 
-.activities-card-lien {
+.activities-cards .activities-card-link {
     flex-basis: 20%;
     flex-grow: 1;
     flex-shrink: 0;
 }
 
-.activities-cards img {
+.activities-cards .activities-card-link .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.activities-cards .card img {
     width: 100%;
     height: 380px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.activities .card-description .card-titre {
-    font-size: 16px;
+.activities .card-content .card-title {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 20px 19px;
@@ -387,7 +371,7 @@ footer div {
     gap: 15px;
 }
 
-.footer-titre {
+.footer-title {
     font-size: 18px;
 }
 
