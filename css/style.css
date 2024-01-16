@@ -577,7 +577,7 @@ footer div {
     .information .information-filter .information-filter-action {
         justify-content: center;
         height: 50px;
-   
+        color: var(--Black);
     }
 
      /****** Herbergemente et populaires ******/
