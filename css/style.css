@@ -205,7 +205,6 @@ header img {
     border: 1px solid var(--Grey, #F2F2F2);
     /*le conteneur form doit être arrondi, comme pour le bouton recherche et l'icone*/
     border-radius: var(--information-border-radius);
-    overflow: hidden;
 }
 
 .information .information-search .fa-location-dot {
@@ -219,14 +218,14 @@ header img {
     flex-shrink: 0;
 }
 
-.information .information-search input {
+.information .information-search input, input::placeholder{
     font-size: 18px;
     font-weight: 700;
     padding: 0px;
     width: var(--information-search-input);
     text-align: center;
     border: none;
-    
+    color: var(--Black);
 }
 
 .information .information-search input:hover {
