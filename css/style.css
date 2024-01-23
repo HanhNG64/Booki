@@ -31,10 +31,8 @@
     --information-search-width: 377px;
     --information-search-height: 49px;
     --information-search-input: 195px;
-    --information-border-radius-tl: 15px;
-    --information-border-radius-tr: 15px;
-    --information-border-radius-bl: 15px;
-    --information-border-radius-br: 15px;
+    --information-border-radius: 15px;
+    --information-border-radius-lr: 0;
     --information-span-display: inline;
     --information-magnifying-glass-display: none;
 
@@ -171,6 +169,7 @@ header img {
 }
 
 .header-navigation a:hover {
+    color: var(--main-color);
     border-top:  var(--header-border-top-hover);
     border-bottom: var(--header-border-bottom-hover);
 }
@@ -204,7 +203,8 @@ header img {
     width: var(--information-search-width);
     height: var(--information-search-height);
     border: 1px solid var(--Grey, #F2F2F2);
-    border-radius: var(--information-border-radius-tl) var(--information-border-radius-tr) var(--information-border-radius-br) var(--information-border-radius-bl) ;
+    /*le conteneur form doit être arrondi, comme pour le bouton recherche et l'icone*/
+    border-radius: var(--information-border-radius);
     overflow: hidden;
 }
 
@@ -213,7 +213,7 @@ header img {
     justify-content: center;
     align-items: center;
     width: 50px;
-    border-radius: var(--information-border-radius-tl) 0 0 var(--information-border-radius-bl);
+    border-radius: var(--information-border-radius) 0 0 var(--information-border-radius);
     background: var(--main-bg-color);
     color: var(--Black);
     flex-shrink: 0;
@@ -239,7 +239,7 @@ header img {
     justify-content: center;
     align-items: center;
     padding: 15px 16px;
-    border-radius: 0 var(--information-border-radius-tr) var(--information-border-radius-br) 0;
+    border-radius: var(--information-border-radius-lr) var(--information-border-radius) var(--information-border-radius) var(--information-border-radius-lr);
     border: 1px solid var(--main-color);
     background: var(--main-color);
     color: var(--White);
@@ -253,7 +253,7 @@ header img {
 
 .information .information-search .information-search-validate  .fa-magnifying-glass{
     display: var(--information-magnifying-glass-display);
-    color: var(--White);
+    color: var(--White);;
 }
 
 /*********** Filtre ***********/
@@ -522,8 +522,7 @@ footer div {
         --information-padding: 0 20px;
         --information-search-width: 100%;
         --information-search-input: 100%;
-        --information-border-radius-tr: 15px;
-        --information-border-radius-br: 15px;
+        --information-border-radius-lr: var(--information-border-radius);
         --information-span-display: none;
         --information-magnifying-glass-display: block;
 
