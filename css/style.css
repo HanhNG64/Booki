@@ -84,7 +84,6 @@ body {
     margin: 0px;
 }
 
-
 .body-container {
     display: flex;
     flex-direction: column;
@@ -274,6 +273,10 @@ header img {
     gap: var(--information-filter-group-gap);
 }
 
+.information .information-filter i {
+    font-size: 22px;
+}
+
 .information .information-filter .information-filter-action {
     display: flex;
     align-items: center;
@@ -335,6 +338,7 @@ header img {
     /* card prend toute la hauteur du conteneur lors du redimensionnement*/
     height: 100%;
     box-sizing: border-box;
+    padding: 0;
 }
 
 .hebergements-cards .herbergement-card-link .card img {
@@ -342,6 +346,9 @@ header img {
     height: 124px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+    object-fit: cover;
 }
 
 .hebergements-cards .card .card-content{
@@ -389,7 +396,7 @@ header img {
 
 .populaires .populaires-cards img {
     width: 33%;
-    height: 146px;
+    height: 136px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -400,7 +407,7 @@ header img {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 10px 5px 5px 15px;
+    padding: 10px 0px 5px 15px;
 }
 
 .populaires .populaires-cards .card .card-txt {
@@ -476,11 +483,6 @@ footer div ul{
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
-
-/**************************************************************************************/
-/**************************************** Media queries *******************************/
-/**************************************************************************************/
-
 /* Ecrans moyens (tablettes, inférieur/égal à 1024px)*/
 @media (max-width: 1024px) {
     :root {
@@ -488,6 +490,9 @@ footer div ul{
         --information-filter-gap: 20px;
         --information-filter-direction: column;
         --information-filter-title-align: flex-start;
+
+        /* info filtre*/
+        --information-filter-action-font-size: 16px;
 
         /* hebergement-populaire*/
         --hebergements-popuplaires-display-direction: column;
