@@ -11,8 +11,10 @@
     --Black: #000;
     --Grey-Tint2: #D9D9D9; 
 
+    
     /* main */
     --main-container-gap: 0 50px;
+    --card-border-radius: 20px;
    
     /* Header */
     --header-flex-direction: row;
@@ -21,7 +23,6 @@
     --header-navigation-height: 50%;
     --header-navigation-gap: 68px;
     --header-navigation-align-item: end;
-    --header-border-top : 2px solid transparent;
     --header-border-top-hover : 2px solid var(--main-color);
     --header-border-bottom : none;
     --header-border-bottom-hover : none;
@@ -47,29 +48,31 @@
     /* hebergement-populaire*/
     --hebergements-popuplaires-display-direction: row;
     --hebergements-popuplaires-gap: 40px;
+    --sections-border-radius: 20px;
 
     /* hebergement*/
     --hebergements-width: 65%;
     --hebergements-padding: 30px;
     --hebergements-gap: 30px;
-    --hebergements-cards-grid-column: 1fr 1fr 1fr;
+    --hebergements-cards-grid-column: repeat(3,1fr);
     --hebergements-cards-gap: 30px;
 
      /* populaire*/
      --populaires-width: 32%;
      --populaires-padding: 30px;
-     --populaires-gap: 30px;
-     --populaires-cards-gap: 30px;
+     --populaires-gap: 33px;
+     --populaires-cards-gap: 33px;
      --populaires-cards-grid-column: 1fr;
 
     /* activities*/
-    --activities-cards-grid-column: 1fr 1fr 1fr 1fr;
+    --activities-cards-grid-column: repeat(4,1fr);
     --activities-cards-gab: 30px;
     --activities-img: 380px;
     
     /* Footer*/
     --footer-direction: row;
     --footer-padding: 0;
+    --footer-padding-margin: 0 50px;
     --footer-gap: 0;
     --footer-div-padding: 20px;
 }
@@ -84,7 +87,7 @@ body {
     margin: 0px;
 }
 
-.body-container {
+.main-container {
     display: flex;
     flex-direction: column;
     width: 100%; 
@@ -92,13 +95,13 @@ body {
     gap: 30px;
 }   
 
-.main-container {
+main {
     display: flex;
     flex-direction: column;
     padding: var(--main-container-gap);
     box-sizing: border-box;
     gap: 35px;
-}   
+}
 
 a {
     color: inherit;
@@ -112,7 +115,7 @@ a {
 
 .card {
     background-color: white;
-    border-radius: 20px;
+    border-radius: var(--card-border-radius);/*********************************/
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
@@ -121,7 +124,7 @@ a {
     object-fit: cover;
 }
 
-.card-title {
+.card-title{
     font-size: 16px;
     margin: 0;
 }
@@ -139,9 +142,7 @@ a {
     color: var(--main-bg-color)
 }
 
-/**************************************************************************************/
 /*************************************** Header ***************************************/
-/**************************************************************************************/
 header {
     display: flex;
     flex-direction: var(--header-flex-direction);
@@ -163,7 +164,6 @@ header img {
 .header-navigation a {
     display: flex;
     align-items: var(--header-navigation-align-item);
-    border-top: var(--header-border-top);
     border-bottom: var(--header-border-bottom);
 }
 
@@ -173,10 +173,6 @@ header img {
     border-bottom: var(--header-border-bottom-hover);
 }
 
-/**************************************************************************************/
-/**************************************** Main ****************************************/
-/**************************************************************************************/
-/*
 /*************************************** Information ***************************************/
 .information {
     display: flex;
@@ -192,7 +188,6 @@ header img {
 }
 
 .information .information-title p {
-    font-size: 16px;
     margin: 0px;
 }
 
@@ -229,7 +224,6 @@ header img {
 }
 
 .information .information-search input:hover {
-    /* masquer la bordure lorsque input est survolé*/
     outline: none;
 }
 
@@ -287,7 +281,7 @@ header img {
     border: 2px solid var(--Grey-Tint2);
     font-size: var(--information-filter-action-font-size);
     font-weight: 700;
-    background-color: transparent;
+    background-color: var(--White);
     color: var(--Black);
 }
 
@@ -295,7 +289,7 @@ header img {
     background-color: var(--filter-bg-color);
 }
 
-/*********** Information ***********/
+/*********** Plus d'info  *************/
 .information .information-bar {
     display: flex;
     gap: 10px;
@@ -315,7 +309,7 @@ header img {
 
 .hebergements-and-populaires section {
     background-color: var(--main-bg-color);
-    border-radius: 20px;
+    border-radius: var(--sections-border-radius);
     box-sizing: border-box;
 }
 
@@ -338,24 +332,23 @@ header img {
     /* card prend toute la hauteur du conteneur lors du redimensionnement*/
     height: 100%;
     box-sizing: border-box;
-    padding: 0;
+    padding: 0; 
 }
 
 .hebergements-cards .herbergement-card-link .card img {
     width: 100%;
     height: 124px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
     padding: 5px;
     box-sizing: border-box;
-    object-fit: cover;
 }
 
-.hebergements-cards .card .card-content{
+.hebergements-cards  .card-content{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 4px 15px 15px 15px;
+    padding: 4px 15px 15px 15px; 
 }
 
 .hebergements-cards .card .card-txt {
@@ -397,8 +390,8 @@ header img {
 .populaires .populaires-cards img {
     width: 33%;
     height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
 }
 
 .populaires .populaires-cards .card-content {
@@ -440,23 +433,22 @@ header img {
 .activities-cards .card img {
     width: 100%;
     height: var(--activities-img);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
 }
 
 .activities .card-content {
     padding: 20px 19px;
 }
 
-/**************************************************************************************/
 /**************************************** Footer **************************************/
-/**************************************************************************************/
 footer {
     display: flex;
     flex-direction: var(--footer-direction);
     background: var(--main-bg-color);
     padding: var(--footer-padding);
     gap: var(--footer-gap);
+    margin: var(--footer-padding-margin);
 }
 
 footer div {
@@ -524,11 +516,10 @@ footer div ul{
          /* Header */
         --header-flex-direction: column;
         --header-padding: 0;
-        --header-img-padding: 30px 50px;
+        --header-img-padding: 30px;
         --header-navigation-height: 34px;
         --header-navigation-gap: 0;
         --header-navigation-align-item: start;
-        --header-border-top : none;
         --header-border-top-hover : none;
         --header-border-bottom : 2px solid var(--main-bg-color);
         --header-border-bottom-hover : 2px solid var(--main-color);
@@ -548,6 +539,7 @@ footer div ul{
         /* hebergement-populaire*/
         --hebergements-popuplaires-display-direction: column-reverse;
         --hebergements-popuplaires-gap: 15px;
+        --sections-border-radius: 0;
 
         /* hebergement*/
         --hebergements-padding: 20px;
@@ -569,11 +561,11 @@ footer div ul{
          /*footer*/
          --footer-direction: column;
         --footer-padding: 30px;
+        --footer-padding-margin: 0;
         --footer-gap: 50px;
         --footer-div-padding: 0;
     }
 
-    /*************************** Header **************************/
     header {
         align-items: center;
     }
@@ -587,12 +579,10 @@ footer div ul{
         justify-content: center;
     }
 
-     /******************* Information Recherche *******************/
     .information .information-search .information-search-validate { 
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
-    /********************* Information Filtre **********************/
     .information .information-filter .information-filter-group {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -603,7 +593,6 @@ footer div ul{
         justify-content: center;
     }
 
-    /*********************** Hebergements *************************/
     .hebergements-and-populaires .hebergements {
         background-color: var(--White);
     }
